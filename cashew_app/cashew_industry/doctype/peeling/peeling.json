@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Peeling-{date}-{####}",
+ "creation": "2024-08-23 12:53:42.512263",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cutting_entry",
+  "lot_no",
+  "available_wholes",
+  "available_breaks",
+  "column_break_cgdi",
+  "date",
+  "type_of_input",
+  "quantity",
+  "peeled_output_section",
+  "peeled_output_items",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "cutting_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cutting Entry",
+   "options": "Cutting",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "cutting_entry.lot_no",
+   "fieldname": "lot_no",
+   "fieldtype": "Int",
+   "label": "Lot. No."
+  },
+  {
+   "fieldname": "peeled_output_section",
+   "fieldtype": "Section Break",
+   "label": "Peeled Output"
+  },
+  {
+   "fieldname": "type_of_input",
+   "fieldtype": "Select",
+   "label": "Type Of Input",
+   "options": "NW Wholes\nNW Breaks"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_cgdi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"NW Wholes\";",
+   "fetch_from": "cutting_entry.balance_wholes",
+   "fieldname": "available_wholes",
+   "fieldtype": "Float",
+   "label": "Available Wholes",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"NW Breaks\"",
+   "fetch_from": "cutting_entry.balance_breaks",
+   "fieldname": "available_breaks",
+   "fieldtype": "Float",
+   "label": "Available Breaks",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "peeled_output_items",
+   "fieldtype": "Table",
+   "label": "Peeled Output Items",
+   "options": "Peeling output"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Peeling",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-03 12:27:45.802952",
+ "modified_by": "Administrator",
+ "module": "Cashew Industry",
+ "name": "Peeling",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

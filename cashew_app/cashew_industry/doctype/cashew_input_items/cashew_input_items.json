@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-26 15:03:11.514478",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "update_qty",
+  "item_code",
+  "item_name",
+  "quantity",
+  "uom",
+  "updated_quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"PEELING\"]]",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "read_only_depends_on": "eval:doc.update_qty==0;"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_qty",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Update Qty"
+  },
+  {
+   "default": "0",
+   "fieldname": "updated_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Updated Value",
+   "non_negative": 1,
+   "precision": "3",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-28 17:31:36.536932",
+ "modified_by": "Administrator",
+ "module": "Cashew Industry",
+ "name": "Cashew Input Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

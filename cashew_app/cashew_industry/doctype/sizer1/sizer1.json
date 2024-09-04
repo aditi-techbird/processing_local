@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-23 13:22:55.761763",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "peeling_entry",
+  "lot_no",
+  "type_of_input",
+  "available_peeling_1",
+  "available_peeling_2",
+  "available_peeling_3",
+  "available_peeling_4",
+  "available_peeling_5",
+  "available_peeling_6",
+  "available_peeling_7",
+  "column_break_akll",
+  "date",
+  "quantity",
+  "section_break_oyml",
+  "peeling_input",
+  "section_break_tezm",
+  "sizer_output"
+ ],
+ "fields": [
+  {
+   "fieldname": "peeling_entry",
+   "fieldtype": "Link",
+   "label": "Peeling Entry",
+   "options": "Peeling"
+  },
+  {
+   "fieldname": "lot_no",
+   "fieldtype": "Int",
+   "label": "Lot No."
+  },
+  {
+   "fieldname": "section_break_tezm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sizer_output",
+   "fieldtype": "Table",
+   "label": "Sizer Output",
+   "options": "Peeling output"
+  },
+  {
+   "fieldname": "column_break_akll",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "type_of_input",
+   "fieldtype": "Select",
+   "label": "Type Of Input",
+   "options": "\nPeeling 1\nPeeling 2\nPeeling 3\nPeeling 4\nPeeling 5\nPeeling 6\nPeeling 7"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 1\"",
+   "fieldname": "available_peeling_1",
+   "fieldtype": "Float",
+   "label": "Available Peeling 1"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 2\";",
+   "fieldname": "available_peeling_2",
+   "fieldtype": "Float",
+   "label": "Available Peeling 2"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 3\"",
+   "fieldname": "available_peeling_3",
+   "fieldtype": "Float",
+   "label": "Available Peeling 3"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 4\"",
+   "fieldname": "available_peeling_4",
+   "fieldtype": "Float",
+   "label": "Available Peeling 4"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 5\"",
+   "fieldname": "available_peeling_5",
+   "fieldtype": "Float",
+   "label": "Available Peeling 5"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 6\"",
+   "fieldname": "available_peeling_6",
+   "fieldtype": "Float",
+   "label": "Available Peeling 6"
+  },
+  {
+   "depends_on": "eval:doc.type_of_input==\"Peeling 7\"",
+   "fieldname": "available_peeling_7",
+   "fieldtype": "Float",
+   "label": "Available Peeling 7"
+  },
+  {
+   "fieldname": "section_break_oyml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "peeling_input",
+   "fieldtype": "Table",
+   "label": "Peeling Input",
+   "options": "Peeling output"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-26 12:17:37.399595",
+ "modified_by": "Administrator",
+ "module": "Cashew Industry",
+ "name": "Sizer1",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

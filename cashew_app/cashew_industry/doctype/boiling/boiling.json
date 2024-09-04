@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BOIL-{date}-{####}",
+ "creation": "2024-08-22 09:12:13.453550",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lot_no",
+  "date",
+  "tag",
+  "weight",
+  "balance",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "lot_no.type",
+   "fieldname": "tag",
+   "fieldtype": "Select",
+   "label": "Tag",
+   "options": "\nRCN 48\nRCN 49\nRCN 50"
+  },
+  {
+   "default": "0",
+   "fetch_from": "lot_no.quantity",
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "lot_no.balance",
+   "fieldname": "balance",
+   "fieldtype": "Float",
+   "label": "Balance Weight",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "lot_no",
+   "fieldtype": "Data",
+   "label": "LOT NO."
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Boiling",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-03 11:35:39.394430",
+ "modified_by": "Administrator",
+ "module": "Cashew Industry",
+ "name": "Boiling",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

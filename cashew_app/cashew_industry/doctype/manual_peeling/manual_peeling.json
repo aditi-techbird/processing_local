@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Manual_Peeling-{date}-{####}",
+ "creation": "2024-08-27 13:21:06.009884",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sizer_entry",
+  "lot_no",
+  "column_break_akll",
+  "date",
+  "items_pulled",
+  "section_break_oyml",
+  "manual_peeling_input",
+  "section_break_tezm",
+  "manual_peeling_output",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "sizer_entry.lot_no",
+   "fieldname": "lot_no",
+   "fieldtype": "Int",
+   "label": "Lot No."
+  },
+  {
+   "fieldname": "column_break_akll",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "items_pulled",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Items Pulled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_oyml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_tezm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sizer_entry",
+   "fieldtype": "Link",
+   "label": "Sizer Entry",
+   "options": "Sizer"
+  },
+  {
+   "fieldname": "manual_peeling_input",
+   "fieldtype": "Table",
+   "label": "Manual Peeling Input",
+   "options": "Cashew Input Items"
+  },
+  {
+   "fieldname": "manual_peeling_output",
+   "fieldtype": "Table",
+   "label": "Manual Peeling Output",
+   "options": "Peeling output"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Manual Peeling",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-28 14:45:41.668916",
+ "modified_by": "Administrator",
+ "module": "Cashew Industry",
+ "name": "Manual Peeling",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

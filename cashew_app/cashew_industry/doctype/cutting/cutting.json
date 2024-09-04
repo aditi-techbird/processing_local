@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Cutting-{lot_no}-{date}-{####}",
+ "creation": "2024-08-22 09:17:59.896721",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "boiling_entry",
+  "lot_no",
+  "date",
+  "mode",
+  "balance_wholes",
+  "balance_breaks",
+  "column_break_udgr",
+  "boiled_rcn",
+  "processed_wholes",
+  "processed_breaks",
+  "shell_weight",
+  "rejected_weight",
+  "machine_section",
+  "mc",
+  "labour_section",
+  "name1",
+  "wage_calculation",
+  "column_break_jhzj",
+  "rate",
+  "total_wage",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "\nMachine\nLabour"
+  },
+  {
+   "depends_on": "eval:doc.mode == \"Labour\"",
+   "fieldname": "labour_section",
+   "fieldtype": "Section Break",
+   "label": "Labour"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_jhzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "wage_calculation",
+   "fieldtype": "Select",
+   "label": "Wage Calculation",
+   "options": "Fixed\nvariablr"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "total_wage",
+   "fieldtype": "Float",
+   "label": "Total Wage"
+  },
+  {
+   "fetch_from": "boiling_entry.lot_no",
+   "fieldname": "lot_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Lot No."
+  },
+  {
+   "depends_on": "eval:doc.mode == \"Machine\"",
+   "fieldname": "machine_section",
+   "fieldtype": "Section Break",
+   "label": "Machine"
+  },
+  {
+   "fieldname": "mc",
+   "fieldtype": "Data",
+   "label": "Mc."
+  },
+  {
+   "default": "0",
+   "fieldname": "processed_wholes",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Processed Wholes",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_udgr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "boiling_entry.balance",
+   "fetch_if_empty": 1,
+   "fieldname": "boiled_rcn",
+   "fieldtype": "Float",
+   "label": "Boiled RCN"
+  },
+  {
+   "default": "0",
+   "fieldname": "shell_weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Shell Weight",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "boiling_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Boiling Entry",
+   "link_filters": "[[\"Boiling\",\"balance\",\">\",0]]",
+   "options": "Boiling",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "processed_breaks",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Processed Breaks",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "balance_breaks",
+   "fieldtype": "Float",
+   "label": "Balance Breaks",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rejected_weight",
+   "fieldtype": "Float",
+   "label": "Rejected Weight"
+  },
+  {
+   "fieldname": "balance_wholes",
+   "fieldtype": "Float",
+   "label": "Balance Wholes",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cutting",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-03 11:35:05.341994",
+ "modified_by": "Administrator",
+ "module": "Cashew Industry",
+ "name": "Cutting",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
